@@ -7,6 +7,5 @@
 
 video {
     position: fixed;
-    height: 100vh;
-    width: 100vw;
+    inset: 0;
 }
