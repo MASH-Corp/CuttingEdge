@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CuttingEdge</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <video autoplay playsinline id="camera"></video>
+</body>
+<script>
+
+    const video = document.getElementById('camera');
+
+    // Ask for camera access
+    navigator.mediaDevices.getUserMedia({ video: { facingMode: { exact: "environment" } }, audio: false })
+      .then(stream => {
+        // Set the video srcObject to the camera stream
+        video.srcObject = stream;
+      })
+      .catch(error => {
+        console.error("Error accessing camera:", error);
+      });
+  </script>
+</html>
