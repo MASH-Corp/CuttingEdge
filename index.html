@@ -5,16 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CuttingEdge</title>
     <link rel="stylesheet" href="main.css">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body>
     <video autoplay playsinline id="camera"></video>
+    <model-viewer src="office_chair.glb" alt="Office Chair" auto-rotate camera-controls style="width: 600px; height: 400px;"></model-viewer>
 </body>
 <script>
 
     const video = document.getElementById('camera');
 
     // Ask for camera access
-    navigator.mediaDevices.getUserMedia({ video: { facingMode: { exact: "environment" } }, audio: false })
+    navigator.mediaDevices.getUserMedia(
+        { video: { facingMode: { exact: "environment" } },
+         audio: false 
+        })
       .then(stream => {
         // Set the video srcObject to the camera stream
         video.srcObject = stream;
