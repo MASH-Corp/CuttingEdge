@@ -4,20 +4,20 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 // Camera Access
-    // const video = document.getElementById('camera');
+    const video = document.getElementById('camera');
 
-    // // Ask for camera access
-    // navigator.mediaDevices.getUserMedia(
-    //     { video: { facingMode: { exact: "environment" } },
-    //      audio: false 
-    //     })
-    //   .then(stream => {
-    //     // Set the video srcObject to the camera stream
-    //     video.srcObject = stream;
-    //   })
-    //   .catch(error => {
-    //     console.error("Error accessing camera:", error);
-    //   });
+    // Ask for camera access
+    navigator.mediaDevices.getUserMedia(
+        { video: { facingMode: { exact: "environment" } },
+         audio: false 
+        })
+      .then(stream => {
+        // Set the video srcObject to the camera stream
+        video.srcObject = stream;
+      })
+      .catch(error => {
+        console.error("Error accessing camera:", error);
+      });
     
 // Info Icon Alert
     // const infoBox = document.getElementById('info');
