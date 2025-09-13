@@ -42,7 +42,7 @@ video {
 
 model-viewer {
     width: 100%;
-    height: 100%;
+    height: calc(100% - 20px);
     background-color: transparent;
     pointer-events: auto;
 }
@@ -52,7 +52,7 @@ model-viewer {
 .model-box {
     position: relative;
     width: 100vw; 
-    height: 80vh;
+    height: 100vh;
     pointer-events: none;
 }
 
