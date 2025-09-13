@@ -172,3 +172,23 @@ footer {
     font-size: 16px;
     transition: background-color 0.3s, transform 0.3s;
 }
+
+/* ===========================Scale box============================ */
+label.scale-box {
+    position: absolute;
+    top: 68px;
+    left: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    backdrop-filter: blur(10px);
+}
+
+label.scale-box input {
+    width: 100%;
+}
