@@ -6,46 +6,57 @@
     <title>CuttingEdge</title>
     <link rel="stylesheet" href="main.css">
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script src="https://kit.fontawesome.com/f9b4791500.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
     <video autoplay playsinline id="camera"></video>
-    <div style="position: relative; width: 100vw; height: 100vh;">
-      <model-viewer id="modelViewer" src="office_chair.glb" alt="Office Chair" camera-controls style="width: 100%; height: 100%;"></model-viewer>
-      <label for="model-scale" style="position: absolute; top: 10px; left: 10px; background: rgba(255,255,255,0.8); padding: 4px; border-radius: 4px;">
-        Size:
-        <input type="range" id="model-scale" min="0.1" max="3" step="0.01" value="1">
-      </label>
-      <button id="prime">CuttingEdge</button>
+    <!-- Entire Model Box -->
+    <div class="model-box">
+      <model-viewer id="modelViewer" src="office_chair.glb" alt="Office Chair" camera-controls></model-viewer>
     </div>
-    <script>
-      const modelViewer = document.getElementById('modelViewer');
-      const scaleSlider = document.getElementById('model-scale');
-      scaleSlider.addEventListener('input', () => {
-        const scale = scaleSlider.value;
-        modelViewer.scale = `${scale} ${scale} ${scale}`;
-      });
-    </script>
+
+    <!-- header with navigations -->
+     <header id="header">
+        <nav>
+          <span>Sizes:</span>
+          <ul id="nav-list">
+            <li><a href="">40 cm</a></li>
+            <li><a href="">45cm</a></li>
+            <li><a href="">48cm</a></li>
+            <li><a href="">53cm</a></li>
+          </ul>
+        </nav>
+        <aside id="info"><i class="fa-solid fa-info"></i></aside>
+     </header>
+     <footer>
+      <button id="visit-site-btn" class="btn">
+        <i class="fa-solid fa-eye"></i>
+        Visit Site
+      </button>
+      <button id="add-to-cart-btn" class="btn">
+        <i class="fa-solid fa-cart-shopping"></i>
+        Add to Cart
+      </button>
+     </footer>
+
+     <!-- Info modal -->
+      <div id="info-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-btn " id="close-btn">&times;</span>
+          <h2>Product Information</h2>
+          <p>This is a high-quality office chair designed for comfort and durability.</p>
+          <ul>
+            <li>Company: Lewis</li>
+            <li>Status: Available</li>
+            <li>Price: R20000 inc tax</li>
+            <li>Size: 40cm</li>
+          </ul>
+          <button class="modal-pay">Buy</button>
+        </div>
+
+
+
+    <script src="main.js"></script>
 </body>
-<script>
-
-    const video = document.getElementById('camera');
-
-    // Ask for camera access
-    navigator.mediaDevices.getUserMedia(
-        { video: { facingMode: { exact: "environment" } },
-         audio: false 
-        })
-      .then(stream => {
-        // Set the video srcObject to the camera stream
-        video.srcObject = stream;
-      })
-      .catch(error => {
-        console.error("Error accessing camera:", error);
-      });
-
-      const hello = document.getElementById('prime');
-      hello.addEventListener('click', () => {
-           alert('CuttingEdge');
-        });
-  </script>
 </html>

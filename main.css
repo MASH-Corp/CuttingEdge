@@ -3,6 +3,19 @@
     overflow: hidden;
     padding: 0;
     margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --primary-color-100: #F7F5F0; /* used for buttons, links, and key UI highlights*/
+    --primary-color-300: #F1EDE2;
+    --primary-color-500: #EAE4D5;
+    --primary-color-700: #9F9B91;
+    --primary-color-900: #54524D;
+    --secondary-color-500: #F2F2F2;/* used for headers, borders, or contrasting el3ements*/
+    --neutral: #000000; /* used for backgrounds, shadow, or base text*/
+    --accent: #B6B09F; /* used to highlight key areas, or provide contrast*/
+
 }
 
 video {
@@ -11,19 +24,151 @@ video {
     inset: 0;
 }
 
-button {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    padding: 8px;
-    background-color: blueviolet;
-    border: none;
-    border-radius: 8px;
-    color: white;
-    transition: background-color 0.3s ease-in-out;
+model-viewer {
+    width: 100%;
+    height: 100%;
 }
 
-button:hover {
+.model-box {
+    position: relative;
+    width: 100vw; 
+    height: 100vh;
+}
+
+/* =====================================Header======================================== */
+#header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px 10px 10px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Optional: adds a blur effect to the background */
+}
+
+#header nav {
+    display: flex;
+    flex-direction: column;
+}
+
+#header nav span {
+    margin-right: 10px;
+    font-weight: bold;
+    color: var(--primary-color-900);
+}
+
+#header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 6px;
+}
+
+
+#header nav ul li a {
+    text-decoration: none;
+    color: var(--primary-color-900);
+    font-weight: 500;
+    border-radius: 5px;
+    padding: 6px 6px 0 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#header nav ul li a:hover {
+    transform: scale(1.5);
+}
+
+aside {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #044385;
+    padding: 8px;
+    font-size: 10px;
+    color: white;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
     cursor: pointer;
-    background-color: cadetblue;
+    transition: color 0.3s;
+}
+
+/* ===================================================Footer============================== */
+footer {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    bottom: 20px;
+    width: 100%;
+    padding: 8px;
+}
+
+.btn {
+    background-color: var(--primary-color-900);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* ==================================================modal============================================= */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s, visibility 0.3s;
+    color: var(--primary-color-900);
+}
+.modal-content {
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+}
+.close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.modal-content p {
+    margin-bottom: 20px;
+}
+
+.modal-pay {
+    background-color: var(--primary-color-900);
+    color: white;
+    border: none;
+    margin-top: 20px;
+    padding: 10px 20px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
 }
