@@ -10,7 +10,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 <body>
-
+    <model-viewer 
+    id="modelViewer"
+    src="office_chair.glb" 
+    alt="Office Chair"
+    ar
+    ar-modes="webxr scene-viewer quick-look"
+    camera-controls
+    auto-rotate
+    style="width: 100%; height: 100vh;">
+    </model-viewer>
     <script src="main.js"></script>
     <script>
       a = document.getElementById("below");
