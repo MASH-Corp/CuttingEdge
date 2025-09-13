@@ -40,7 +40,8 @@ video {
 
 model-viewer {
     width: 100%;
-    height: 100%; 
+    height: 500px; 
+    pointer-events: auto;
 }
 
 
@@ -49,6 +50,7 @@ model-viewer {
     position: relative;
     width: 100vw; 
     height: 100vh;
+    pointer-events: none;
 }
 
 /* =====================================Header======================================== */

@@ -36,4 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const scale = scaleSlider.value;
         modelViewer.scale = `${scale} ${scale} ${scale}`;
       });
+
+    // AR Button
+    // document.getElementById('enterAR').addEventListener('click', () => {
+    //   modelViewer.enterAR();
+    // });
 });

@@ -11,10 +11,22 @@
 </head>
 <body>
 
-    <video autoplay playsinline id="camera"></video>
+    <video autoplay 
+          playsinline 
+          id="camera">
+    </video>
     <!-- Entire Model Box -->
     <div class="model-box">
-      <model-viewer id="modelViewer" src="office_chair.glb" alt="Office Chair" camera-controls   interaction-prompt="none"></model-viewer>
+      <model-viewer id="modelViewer" 
+                    src="office_chair.glb"
+                    alt="Office Chair"
+                    ar
+                    ar-placement="floor"
+                    ar-modes="webxr scene-viewer quick-look"
+                    camera-controls
+                    interaction-prompt="none"
+                    auto-rotate>
+      </model-viewer>
     </div>
 
     <!-- header with navigations -->
@@ -40,6 +52,7 @@
         <i class="fa-solid fa-cart-shopping"></i>
         <!-- Add to Cart -->
       </button>
+      <button slot="ar-button" class="btn">AR</button>
      </footer>
 
      <!-- Info modal -->
