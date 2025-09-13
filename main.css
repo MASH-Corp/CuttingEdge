@@ -5,7 +5,21 @@
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+/* input[type="range"]::-moz-range-thumb {
+    background: black;
+    border: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+} */
+.cover{
+    display:flex;
+}
 
+.uncover{
+    display: none;
+}
 :root {
     --primary-color-100: #F7F5F0; /* used for buttons, links, and key UI highlights*/
     --primary-color-300: #F1EDE2;
@@ -28,6 +42,8 @@ model-viewer {
     width: 100%;
     height: 100%; 
 }
+
+
 
 .model-box {
     position: relative;
@@ -53,10 +69,16 @@ model-viewer {
     flex-direction: column;
 }
 
-#header nav span {
+#header nav .scale-box {
+    display: flex;
+    flex-direction: column;
     margin-right: 10px;
     font-weight: bold;
     color: var(--primary-color-900);
+}
+
+.scale-box input {
+    width: 100%;
 }
 
 #header nav ul {
@@ -78,34 +100,46 @@ model-viewer {
 #header nav ul li a:hover {
     transform: scale(1.5);
 }
+.group{
+    display: flex;
+    gap: 0px;
+}
+
+i:not(footer i) {
+    color: #0079d9;
+}
 
 aside {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #044385;
+    /* background-color: #044385; */
     padding: 8px;
     font-size: 10px;
     color: white;
     border-radius: 100%;
-    width: 20px;
-    height: 20px;
+    /* width: 20px;
+    height: 20px; */
     cursor: pointer;
     transition: color 0.3s;
+    font-weight: 800;
+    font-size: 15px;
 }
 
 /* ===================================================Footer============================== */
 footer {
     position: absolute;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
     bottom: 20px;
     width: 100%;
     padding: 8px;
 }
 
 .btn {
-    background-color: var(--primary-color-900);
+    background-color: #0079d9;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -115,6 +149,7 @@ footer {
     align-items: center;
     gap: 8px;
     font-size: 16px;
+    width: fit-content;
     transition: background-color 0.3s, transform 0.3s;
 }
 
@@ -161,7 +196,7 @@ footer {
 }
 
 .modal-pay {
-    background-color: var(--primary-color-900);
+    background-color: #0079d9;
     color: white;
     border: none;
     margin-top: 20px;
@@ -174,21 +209,17 @@ footer {
 }
 
 /* ===========================Scale box============================ */
-label.scale-box {
+/* label.scale-box {
     position: absolute;
     top: 68px;
     left: 50%;
     width: 100vw;
     transform: translateX(-50%);
-    /* background-color: rgba(255, 255, 255, 0.8); */
-    padding: 5px 10px;
+    background-color: rgba(255, 255, 255, 0.8); */
+    /* padding: 5px 10px;
     border-radius: 5px;
     display: flex;
     align-items: center;
     gap: 10px;
     backdrop-filter: blur(10px);
-}
-
-label.scale-box input {
-    width: 100%;
-}
+}  */
