@@ -111,6 +111,7 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.161.1/build/three.m
 import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.161.1/examples/jsm/loaders/GLTFLoader.js';
 import { ARButton } from 'https://cdn.jsdelivr.net/npm/three@0.161.1/examples/jsm/webxr/ARButton.js';
 
+
 document.addEventListener('DOMContentLoaded', () => {
   // Camera Access
   const video = document.getElementById('camera');
@@ -123,7 +124,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const infoModal = document.getElementById('info-modal');
   const closeBtn = document.getElementById('close-btn');
 
-  infoBox.addEventListener('click', () => { infoModal.style.display = 'flex'; });
+  infoBox.addEventListener('click', () => { 
+    infoModal.style.display = 'flex';
+    console.log("Info modal opened");
+   });
   closeBtn.addEventListener('click', () => { infoModal.style.display = 'none'; });
 
   // Three.js + AR Setup
