@@ -119,17 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(stream => { video.srcObject = stream; })
     .catch(error => { console.error("Error accessing camera:", error); });
 
-  // Info Icon Alert
-  const infoBox = document.getElementById('info');
-  const infoModal = document.getElementById('info-modal');
-  const closeBtn = document.getElementById('close-btn');
-
-  infoBox.addEventListener('click', () => { 
-    infoModal.style.display = 'flex';
-    console.log("Info modal opened");
-   });
-  closeBtn.addEventListener('click', () => { infoModal.style.display = 'none'; });
-
   // Three.js + AR Setup
   let camera, scene, renderer, model;
 
@@ -167,14 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     scene.add(controller);
 
-    // Slider for scaling all models in scene
-    const scaleSlider = document.getElementById('model-scale');
-    scaleSlider.addEventListener('input', () => {
-      const scale = parseFloat(scaleSlider.value);
-      scene.traverse((child) => {
-        if (child.isMesh) child.scale.set(scale, scale, scale);
-      });
-    });
+
 
     renderer.setAnimationLoop(() => { renderer.render(scene, camera); });
   }
